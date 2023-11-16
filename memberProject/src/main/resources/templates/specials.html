@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  layout:decorate="~{layout}"
+ 	  lang="ko-kr">
+<head>
+<meta charset="UTF-8">
+<title>specials</title>
+
+
+<link rel="stylesheet"
+	th:href="@{/bootstrap/5.3.1/css/bootstrap.min.css}" />
+<script th:src="@{/bootstrap/5.3.1/js/bootstrap.min.js}" charset="UTF-8"></script>
+
+<!-- bootstrap icons :  -->
+<link rel="stylesheet" th:href="@{/bootstrap-icons/1.11.1/font/bootstrap-icons.min.css}">
+
+</head>
+<body>
+	<div layout:fragment="content" class="main_sect_pnl">
+		<div id="myPage" class="content_sect_pnl" >
+			
+			<div id="specials_top">
+				<h2 style=" text-indent:145px;">SPECIALS</h2>
+			</div>
+			<br>
+						
+				<ul id="boxArea_5">
+				
+					<div><a th:href="@{/special?id=11}"><li><img th:src="@{/images/specials/acc-room-32.jpg}"/></li>
+						<b>White Vacation</b><br>
+						시그니처 수영장 패키지<br>
+						기간 : 2023-11-01 ~ 2024-02-29<br>
+						가격 : 235,000원 ~자세히보기 예약하기<br>
+						</a>
+					</div>
+										
+					<div><a th:href="@{/special?id=12}"><li><img th:src="@{/images/specials/acc-room-40.jpg}"/></li>
+						<b>White Vacation For Family</b><br>
+						아이 동반 가족 맞춤형 패키지<br>
+						기간 : 2023-11-01 ~ 2024-02-29<br>
+						가격 : 284,900원 ~자세히보기 예약하기<br>
+						</a>
+					</div>
+					
+					<div><a th:href="@{/special?id=13}"><li><img th:src="@{/images/specials/acc-room-49.jpg}"/></li>
+						<b>오후의 기록</b><br>
+						애프터눈 티 세트 포함 패키지<br>
+						기간 : 2023-11-01 ~ 2024-02-29<br>
+						가격 : 202,000원 ~자세히보기 예약하기<br>
+						</a>
+					</div>
+										
+					<div><a th:href="@{/special?id=14}"><li><img th:src="@{/images/specials/acc-room-59.jpg}"/></li>
+						<b>가을 바람</b><br>
+						Sweet Autumn with After blow (100객실 한정)<br>
+						기간 : 2023-09-20 ~ 2023-11-30<br>
+						가격 : 223,000원 ~자세히보기 예약하기<br>
+						</a>
+					</div>	
+									
+					<div><a th:href="@{/special?id=15}"><li><img th:src="@{/images/specials/acc-room-70.jpg}"/></li>
+						<b>일상의 여행, 여덟 번째</b><br>
+						연중 조식 포함 패키지<br>
+						기간 : 2023-01-01 ~ 2023-12-31<br>
+						가격 : 188,000원 ~자세히보기 예약하기<br>
+						</a>
+					</div>	
+			
+					<div><a th:href="@{/special?id=16}"><li><img th:src="@{/images/specials/acc-room-82.jpg}"/></li>
+						<b>RUN OF HOUSE│당일 특가</b><br>
+	 					체크인 시 랜덤 객실 배정+야외 수영장 2인권<br>
+						기간 : 2019-01-04 ~ 2023-12-31<br>
+						가격 : 0원 ~<br>
+						</a>
+					</div>					
+					
+					
+				</ul><!-- SPECIALS -->
+			</div>	
+	</div>
+</body>
+</html>

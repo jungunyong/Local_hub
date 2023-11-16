@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  layout:decorate="~{layout}"
+ 	  lang="ko-kr">
+<head>
+<meta charset="UTF-8">
+<title>Rooms</title>
+</head>
+<body> 
+	<div layout:fragment="content" class="main_sect_pnl">
+		<div id="myPage" class="content_sect_pnl" >
+			
+			<div id="room_top">
+				<h2>Accommodation</h2>
+			</div>
+			
+			<h2 style=" text-indent:145px;">STANDARD</h2>
+			
+			<ul id="boxArea_2">
+				
+				<div><a th:href="@{/room?id=1}"><li><img th:src="@{/images/rooms/acc-room-1.jpg}"></img></li>
+					<b>Standard Twin</b><br>
+					자신에게 집중할 수 있는 프라이빗한 공간<br>
+					침대: 싱글Bed 2개<br>
+					객실크기: 32.9sqm(약 9.9평)<br>
+					</a>
+				</div>
+				
+				<div><a th:href="@{/room?id=2}"><li><img th:src="@{/images/rooms/acc-room-2.jpg}"></img></li>
+					<b>Standard Double</b><br>
+					아늑하게 휴식을 취할 수 있는 쾌적한 공간<br>
+					침대: 더블Bed 1개<br>
+					객실크기: 32.9sqm(약 9.9평)<br>
+					</a>
+				</div>
+				
+				<div><a th:href="@{/room?id=3}"><li><img th:src="@{/images/rooms/acc-room-3.jpg}"></img></li>
+					<b>Standard Super Twin</b><br>
+					실용적이고 편안한 공간<br>
+					침대: 더블Bed 1개+싱글Bed 1개<br>
+					객실크기: 32.9sqm(약 9.9평)<br>
+					</a>
+				</div>			
+				
+			</ul><!-- STANDARD -->
+
+			<h2 style=" text-indent:145px;">DELUXE</h2>
+
+			<ul id="boxArea_3">
+			
+				<div><a th:href="@{/room?id=4}" style="color: black; text-decoration: none;"><li><img th:src="@{/images/rooms/acc-room-4.jpg}"></img></li>
+					<b>Deluxe Twin (벙커룸)</b><br>
+					네스트의 시그니처 공간<br>
+					침대: 더블Bed 1개 + 싱글Bed 1개<br>
+					객실크기: 43.4sqm (약 13.1평)<br>
+					</a>
+				</div>
+				
+				<div><a th:href="@{/room?id=5}"><li><img th:src="@{/images/rooms/acc-room-5.jpg}"></img></li>
+					<b>Deluxe Double</b><br>
+					여유롭고 짜임새 있는 공간<br>
+					침대: 더블Bed 1개<br>
+					객실크기: 43.4sqm (약 13.1평)<br>
+					</a>
+				</div>
+				
+				<div><a th:href="@{/room?id=6}"><li><img th:src="@{/images/rooms/acc-room-7.jpg}"></img></li>
+					<b>Deluxe Family</b><br>
+					넓고 효율적인 공간<br>
+					침대: 더블Bed 2개<br>
+					객실크기: 43.4sqm (약 13.1평)<br>
+					</a>
+				</div>					
+				
+			</ul><!-- DELUXE -->
+
+			<h2 style=" text-indent:145px;">SUITE</h2>
+
+			<ul id="boxArea_4" >
+			
+				<div><a th:href="@{/room?id=7}"><li><img th:src="@{/images/rooms/acc-room-10.jpg}"></img></li>
+					<b>Studio Suite</b><br>
+					최고의 전망과 서비스를 누리는 공간<br>
+					침대: 킹사이즈Bed 1개<br>
+					객실크기: 75.9sqm(약 23평)<br>
+					</a>
+				</div>
+				
+				<div><a th:href="@{/room?id=8}"><li><img th:src="@{/images/rooms/acc-room-14.jpg}"></img></li>
+					<b>Reed Suite</b><br>
+					혼자만의 사색과 여유를 즐기는 최상의 공간<br>
+					침대: 킹사이즈Bed 1개<br>
+					객실크기: 75.9sqm(약 23평)<br>
+					</a>
+				</div>
+				
+				<div><a th:href="@{/room?id=9}"><li><img th:src="@{/images/rooms/acc-room-19.jpg}"></img></li>
+					<b>Panorama Suite</b><br>
+				 	서해의 낭만이 파노라마로 펼쳐지는 최상의 공간<br>
+					침대: 킹사이즈Bed 1개<br>
+					객실크기: 119.4qm(약 36.1평)<br>
+					</a>
+				</div>
+				
+				<div><a th:href="@{/room?id=10}"><li><img th:src="@{/images/rooms/acc-room-25.jpg}"></img></li>
+					<b>Patio Suite</b><br>
+				 	품격 있는 당신만이 경험할 수 있는 최상의 공간<br>
+					침대: 킹사이즈Bed 1개<br>
+					객실크기: 119.4sqm(약 36.1평)<br>
+					</a>
+				</div>
+				
+			</ul><!-- SUITE -->
+			
+		</div>
+	</div>
+</body>
+</html>

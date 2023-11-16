@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  layout:decorate="~{layout}"
+ 	  lang="ko-kr">
+<head>
+<meta charset="UTF-8">
+<title>room</title>
+
+
+<link rel="stylesheet"
+	th:href="@{/bootstrap/5.3.1/css/bootstrap.min.css}" />
+<script th:src="@{/bootstrap/5.3.1/js/bootstrap.min.js}" charset="UTF-8"></script>
+
+<!-- bootstrap icons :  -->
+<link rel="stylesheet" th:href="@{/bootstrap-icons/1.11.1/font/bootstrap-icons.min.css}">
+
+</head>
+<body>
+
+<div layout:fragment="content" class="main_sect_pnl">
+	인자 : [[${room.Id}]]
+	
+	<div id="myPage" class="content_sect_pnl" >
+
+	
+		<div id="slideArea_2">
+			<div id="demo" class="carousel slide" data-bs-ride="carousel">
+			
+				<swiper-container class="mySwiper" pagination="true"
+					pagination-clickable="true" navigation="true" space-between="30"
+					centered-slides="true" autoplay-delay="2500"
+					autoplay-disable-on-interaction="false"> 				
+				
+				<swiper-slide>
+					<img th:src="@{'/images/room/'+${room.roomPic}}">
+				</swiper-slide> 
+				<swiper-slide>
+					<img th:src="@{'/images/room/'+${room.roomPic}}">
+					</swiper-slide> 
+				<swiper-slide>
+					<img th:src="@{'/images/room/'+${room.roomPic}}">
+					</swiper-slide>
+					
+				</swiper-container>
+				
+			</div>
+		</div>
+		<!-- 객실의 구성요소 -->
+		 <div>
+		 	<div style="text-indent:40px;" th:text="${room.roomInformation}"></div>	
+		</div>
+		
+ 		<!-- 객실의 공통요소 -->
+		<!-- <div style="text-indent:40px;">
+			[[${dinings.get(0).roomInformation}]]<br>	
+			
+		</div> -->
+		<div style="text-indent:40px;">
+			<b style="font-size:15px;">네스트호텔만의 특별한 서비스</b><br>
+		</div>
+		
+			
+		<div id="amenity_1">
+			<ul>
+				
+				<div><li><img th:src="@{/images/room_std/img_speaker.gif}"></li>
+					&nbsp;블루투스 스피커<br>
+					&nbsp;(Bluetooth Speaker)
+				</div>
+				<div><li><img th:src="@{/images/room_std/img_bathrobe.gif}"></li>
+					&nbsp;순면 목욕가운<br>
+					&nbsp;(Cotton bathrobes)
+				</div>
+				<div><li><img th:src="@{/images/room_std/img_charger.gif}"></li>
+					&nbsp;휴대폰 충전기<br>
+					&nbsp;(Mobile Chargers)
+				</div>
+				<div><li><img th:src="@{/images/room_std/img_lamp.gif}"></li>
+					&nbsp;침대 헤드보드 램프<br>
+					&nbsp;(Bed Headboard Lamp)
+				</div>
+				<div><li><img th:src="@{/images/room_std/img_nestkit.gif}"></li>
+					&nbsp;네스트 킷 (소독솜 등)<br>
+					&nbsp;(nest kit)
+				</div>
+				<div><li><img th:src="@{/images/room_std/img_tea.gif}"></li>
+					&nbsp;티 2ea<br>
+					&nbsp;(Tea)
+				</div>
+				<div><li><img th:src="@{/images/room_std/img_wifi.gif}"></li>
+					&nbsp;와이파이<br>
+					&nbsp;(Wifi)
+				</div>
+				<div><li><img th:src="@{/images/room_std/img_water3_n.gif}"></li>
+					&nbsp;생수 3병 무료제공<br>
+					&nbsp;(Mineral Water)
+				</div>
+				<div><li><img th:src="@{/images/room_std/img_clean_n.gif}"></li>
+					&nbsp;손소독제(btl) + 일회용 손소독제<br>
+					&nbsp;(Hand Sanitizers)
+				</div>
+	
+			</ul>
+			<div id="hotel_info_1">
+				<br>
+				<div class="d-grid gap-2 col-10 mx-auto">
+  				 <button class="btn btn-primary" type="submit" onclick="location.href='/memberProject/reserve'" >예약하기</button>
+  				</div>
+  				<br>
+				<p>
+					&nbsp;<b>Hotel Info.</b><br><br>
+					&nbsp;<b>조식 안내</b><br><br>
+					&nbsp;장소 : L층 플라츠<br>
+					&nbsp;시간 : 06:30~10:30<br>
+					&nbsp;<b>룸 서비스 안내</b><br><br>
+					&nbsp;06:30~01:00<br>
+					&nbsp;조식 06:30~12:00<br>
+					&nbsp;단품 12:00~01:00<br>
+					&nbsp;<b>체크인/체크아웃 시간</b><br><br>
+					&nbsp;체크인 : 15:00 이후<br>
+					&nbsp;체크아웃 : 11:00<br>
+					&nbsp;<b>얼리 체크인 안내</b><br><br>
+					&nbsp;10:00~15:00 : 55,000원 추가<br>
+					&nbsp;10:00 이전 : 1박 요금 추가<br>
+					&nbsp;<b>레이트 체크아웃 안내</b><br><br>
+					&nbsp;11:00~15:00 : 55,000원 추가<br>
+					&nbsp;15:00~18:00 : 객실료의 50% 추가<br>
+					&nbsp;18:00 이후 : 1박 요금 추가<br>
+					&nbsp;<b>예약 취소 시 안내</b><br><br>
+					&nbsp;하기 규정을 참고해 주시기 바랍니다.<br>
+					&nbsp;예약취소에 따른 위약금규정<br>
+					&nbsp;<b>제빙기, 탈수기 안내</b><br><br>
+					&nbsp;4F~7F 엘리베이터 좌측 배치<br>
+					&nbsp;8F~11F 엘리베이터 우측 비상계단 부근 배치<br>
+				</p>
+			</div>
+			
+		</div>
+		
+	</div>
+	
+	<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+</div>
+
+
+
+
+</body>
+</html>

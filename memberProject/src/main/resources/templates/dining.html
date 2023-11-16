@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  layout:decorate="~{layout}"
+ 	  lang="ko-kr">
+<head>
+<meta charset="UTF-8">
+<title>[[${dining.roomName}]]</title>
+
+<link rel="stylesheet"
+	th:href="@{/bootstrap/5.3.1/css/bootstrap.min.css}" />
+<script th:src="@{/bootstrap/5.3.1/js/bootstrap.min.js}" charset="UTF-8"></script>
+
+<!-- bootstrap icons :  -->
+<link rel="stylesheet" th:href="@{/bootstrap-icons/1.11.1/font/bootstrap-icons.min.css}">
+
+</head>
+<body>
+
+<div layout:fragment="content" class="main_sect_pnl">
+	<div id="myPage" class="content_sect_pnl" >
+		
+		<div id="dining_top">	
+			<img th:src="@{'/images/dinings/dining/'+${dining.roomPic}}">
+		</div>
+		
+		<div id="dining_containal">
+			<div>
+				
+				<div id=dining_info>
+		 			<br><b><div th:utext="${dining.roomInformation}"></div></b>
+				</div>
+				
+			</div>
+			
+		</div>
+		
+	</div>
+	
+	<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+</div>
+
+
+
+
+</body>
+</html>

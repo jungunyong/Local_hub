@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<!-- 10.17 : thymeleaf dialect 적용 -->
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+      lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>home</title>
+
+<!-- 10.17 : 전체적인 CSS 조정(추가/변경) -->
+
+<!-- bootstrap -->
+<link rel="stylesheet" th:href="@{/bootstrap/5.3.1/css/bootstrap.min.css}" />
+<script th:src="@{/bootstrap/5.3.1/js/bootstrap.min.js}" charset="UTF-8"></script>
+
+<style>
+
+ body {
+	margin:0;
+	/* overflow:hidden; */ /* 내용 넘침 방지 */
+}
+
+
+/* 상단 menu 레이아웃 패널 */
+div.header_sect_pnl {
+	background-color: #fff; 
+	color: rgb(0, 0, 0); 
+	height: 123px;
+}
+
+
+/* 중앙 content 레이아웃 패널  */ 
+div.main_sect_pnl {
+	
+	margin:auto;
+	margin-top:71px;
+	width:1500px;
+	background-color: #fff; 
+	min-height:calc(100vh - 300px); 
+	
+	/* 컨텐츠 중앙 정렬 */
+	 /* display : flex;  */
+	align-items:center;
+	justify-content:center; 
+} 
+
+/* 중앙 content 레이아웃 "컨텐츠" 패널  */
+div.content_sect_pnl {
+	width:100%;
+	height:100%;
+	background-color:#fff;
+	padding-left:20px; /* 좌측만 여백 할당 */
+	padding-top:20px;  /* 좌측만 여백 할당 */		
+} 
+
+/* 하단 footer 레이아웃 패널 */
+div.footer_sect_pnl {
+	background-color:#000; 
+	color:#fff;
+	height:100px;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	
+}
+/* main_menu */
+ul#main_menu {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background: rgb(255, 255, 255);
+	width: 100vw;
+}
+
+ul#main_menu li {
+	/* float: right; */
+	float: left;
+}
+
+ul#main_menu li a.logo{
+	padding:0;
+	/* float: left; */
+	}
+
+ul#main_menu li a {
+	display: block;
+	color: black;
+	text-align: center;
+	padding: 50px;
+	text-decoration: none;
+}
+
+ul#main_menu li a:hover {
+	background-color: black;
+	color: white;
+	font-weight: bold;
+}
+
+
+/* sub_menu */ 
+ul#sub_menu{
+	display:flex;
+	justify-content:space-around;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	background-color: #333;
+	height:70px;
+	width: 100vw;
+	
+}
+
+ul#sub_menu {
+	background-color: #7e6956;
+	width:100%;
+}
+
+ul#sub_menu li {
+	float:left;
+	width:auto;
+
+}
+
+ul#sub_menu li a{
+	color: #fff;
+
+	text-align: center;
+	text-decoration: none;
+	display:flex;
+	justify-content:space-around;
+	height:70px;
+	padding-top:22px;
+}
+
+/* -------------slide--------------- */
+swiper-container {
+      width: 1400px;
+      height: 400px; 
+      overflow-y:hidden;
+      margin: auto;
+}
+swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+}
+
+swiper-slide img {
+      /* display: block; */
+      width: 1400px;
+      /* height: 400px; */
+      height: 840px; 
+      /* object-fit: cover;*/
+}
+
+/* slideArea */
+
+div#slideArea {
+	  margin:auto;
+	  margin-top: 70px;
+	  width:1500px;
+	  height:400px;
+}
+
+div#slideArea_1 img {
+	  width:1500px;
+	  height:400px;
+}
+
+/* -------------slide--------------- */
+
+
+/* ---------boxArea----------- */
+
+/* home */
+
+div#boxArea_1 {
+	  display:flex;
+	  justify-content: space-between;
+	  width:1400px;
+	  height:400px;
+	  margin:auto;
+}
+
+/* room */
+
+div#room_top {
+	  
+	  width: 1300px;
+	  height: 300px;
+	  background-image: url(/memberProject/images/rooms/img_room_top.jpg);
+	  background-repeat : no-repeat;
+	  background-size : cover;
+	  background-size: 100% 100%;
+	  margin:auto;
+}
+
+
+div#room_top h2 {
+	  padding-top:130px;
+	  display:flex;
+	  align-items : center;
+	  justify-content : center;
+	  color:#fff;
+	  
+} 
+
+ul[id^='boxArea']  {
+ 	  
+ 	  display: flex;
+  	  flex-wrap: wrap;
+  	  width:1250px;
+  	  /* height: 400px; */
+  	  align-content: space-between;
+ 	  list-style-type: none;
+ 	  margin-bottom:10px;
+ 	  justify-content: space-between;
+	  margin:auto;
+}
+
+ul#boxArea_5 {
+	  background-image: url(/memberProject/images/room/acc-room-40-bg-2.png);
+	  background-position: center center;
+	  background-repeat: no-repeat;
+	  background-size: 80% 80%;
+	  margin:auto;
+}
+
+ul[id^='boxArea'] li {
+ 	  
+ 	 margin-bottom:30px;
+
+} 
+
+
+ul#boxArea li img{
+	
+	  width:400px;
+	  padding:10px;
+	  margin-bottom:10px;
+}
+
+/* ---------boxArea----------- */
+
+/* amenity */
+div[id^='amenity'] {
+	  display:flex;
+	  width:1420px;
+	  height:1030px;
+	
+}
+
+
+
+div[id^='amenity'] ul {
+
+	  display:flex;
+	  flex-wrap: wrap;
+}
+
+div[id^='amenity'] ul li {
+  	  
+  	  
+	  list-style-type: none;
+}
+
+div[id^='amenity'] img {
+	  
+	  width:380px; 	  
+	  height:250px;
+	  padding:10px;
+} 
+
+
+div[id^='hotel_info_1'] {
+	  width:600px;
+	  height:1030px;
+	  background:#d8b18c;
+	  border-radius:6px;
+}
+
+
+/* div[class^='btn'] {
+	  
+} */
+
+
+/* amenity */
+
+div#notice_inpormation  {
+	  background: #808080;
+	  Text-Align: Center;
+	  height:200px;
+	  color:#fff;
+}
+
+div#notice_way {
+	  background: #a9a9a9;
+	  Text-Align: Center;
+	  height:200px;
+	  color:#fff;
+}
+
+
+/* ---------갤러리---------- */
+div#gallery {
+	  padding: 30px;
+	  width: 700px;
+	  
+
+}
+
+div#login_box {
+	  margin:auto;
+	  margin-top:300px;
+}
+
+input#join_btn, input#login_btn {
+	  width:360px;
+}
+
+div#mini_board {
+	  margin-top:30px;
+	  border:1px solid #ba763e;
+	  border-radius:5px;
+	  background:#ba763e;
+ 	  
+}
+
+/* dinings */
+
+div#dinings_top {
+	  
+	  width: 1300px;
+	  height: 300px;
+	  background-image: url(/memberProject/images/dinings/img_dining_top.jpg);
+	  background-repeat : no-repeat;
+	  background-size : cover;
+	  background-size: 100% 100%;
+	  margin:auto;
+	  
+}
+
+div#dinings_top h2 {
+	  padding-top:130px;
+	  display:flex;
+	  align-items : center;
+	  justify-content : center;
+	  color:#fff;
+	  
+} 
+
+
+div#dining_top {
+	  
+	  width:1200px;
+	  height:400px;
+	  margin:auto;
+
+}
+div#dining_top img {
+	  
+	  width:1200px;
+	  height:400px;
+	  overflow:hidden;
+	  background-size:none;
+	  
+}
+
+div#dining_info {
+	  
+	  width:1000px;
+	  margin:auto;
+	  vertical-align: middle;
+	  
+}
+
+div#dining_containal {
+	  
+	  width:1200px;
+	  margin:auto;
+	  height:600px;
+	  background:#f9f6ef;
+	  
+}
+
+/* specials */
+
+div#specials_top {
+	  
+	  width: 1300px;
+	  height: 300px;
+	  background-image: url(/memberProject/images/specials/special/img_specials_top.jpg);
+	  background-repeat : no-repeat;
+	  background-size : cover;
+	  background-size: 100% 100%;
+	  margin:auto;
+	  
+}
+
+div#specials_top h2 {
+
+	  padding-top:130px;
+	  display:flex;
+	  align-items : center;
+	  justify-content : center;
+	  color:#fff;
+	  
+}
+
+div#special_top {
+	  
+	  width: 1300px;
+	  height: 300px;
+	  background-image: url(/memberProject/images/specials/special/img_special_top.jpg);
+	  background-repeat : no-repeat;
+	  background-size : cover;
+	  background-size: 100% 100%;
+	  margin:auto;
+	  
+}
+
+div#special_top h2 {
+
+	  padding-top:130px;
+	  display:flex;
+	  align-items : center;
+	  justify-content : center;
+	  color:#fff;
+	  
+}
+
+div#special_containal {
+	  
+	  width:1200px;
+	  margin:auto;
+	  
+}
+
+div#special_tit {
+	  
+	  width:1300px;
+	  margin:auto;
+}
+
+
+
+</style>
+
+</head>
+<body>
+
+	<div th:replace="layout/header :: header"></div>
+	
+	<div layout:fragment="content"></div>
+	
+	<div th:replace="layout/footer :: footer"></div>
+	
+	<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+</body>
+</html>

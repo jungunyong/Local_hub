@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  layout:decorate="~{layout}"
+ 	  lang="ko-kr">
+<head>
+<meta charset="UTF-8">
+<title>Dinings</title>
+</head>
+<body> 
+	<div layout:fragment="content" class="main_sect_pnl">
+		<div id="myPage" class="content_sect_pnl" >
+			
+			<div id="dinings_top">
+				<h2>Dinings</h2>
+			</div>
+			
+			<p style=" text-indent:90px;">네스트호텔의 훌륭한 레스토랑 ‘PLATZ’와 감각적인 문화예술공간‘KUNST LOUNGE’는 일반 방문객들에게도 열려 있습니다.<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;바다와 하늘의 파노라마 뷰를 감상하며 식사를 즐기시고, 1,000여권의 아트북이 비치된 라이브러리에서 예술적 영감을 느껴보세요.</p>
+			
+			<ul id="boxArea_6">
+				
+				<div><a th:href="@{/dining?id=1}"><li><img th:src="@{/images/dinings/img_dining1.jpg}"></img></li>
+					<b>PLATZ (플라츠 레스토랑)</b><br>
+					다양한 메뉴의 올데이 다이닝<br>
+					위치: L층<br>
+					예약 및 문의: TEL 032 743 9311, FAX 032 743 9305<br>
+					자세히보기<br>
+					
+					</a>
+				</div>
+				
+				<div><a th:href="@{/dining?id=2}"><li><img th:src="@{/images/dinings/img_dining2.jpg}"></img></li>
+					<b>KUNST LOUNGE (쿤스트 라운지)</b><br>
+					새로운 감각의 라이프 스타일 공간<br>
+					위치: L층<br>
+					예약 및 문의: TEL 032 743 9125, FAX 032 743 9305<br>
+					자세히보기<br>
+					
+					</a>
+				</div>
+				
+				<div><a th:href="@{/dining?id=3}"><li><img th:src="@{/images/dinings/img_dining3.jpg}"></img></li>
+					<b>LUFT THE BAR (루프트 더 바)</b><br>
+					간단한 스낵을 즐길 수 있는 공간<br>
+					예약 및 문의: TEL 032 743 9296<br>
+					자세히보기<br>
+					
+					</a>
+				</div>			
+
+				<div><a th:href="@{/dining?id=4}" style="color: black; text-decoration: none;"><li><img th:src="@{/images/dinings/img_dining4.jpg}"></img></li>
+					<b>ROOM SERVICE (룸 서비스)</b><br>
+					객실에서 즐기는 당신만의 프리미엄 다이닝<br>
+					예약 및 문의: TEL 032 743 9315<br>
+					자세히보기<br>
+					
+					</a>
+				</div>
+				
+				<div><a th:href="@{/dining?id=5}"><li><img th:src="@{/images/dinings/img_dining5.jpg}"></img></li>
+					<b>BREAKFAST (조식)</b><br>
+					엄선된 메뉴로 선별된 조식<br>
+					예약 및 문의: TEL 032 743 9000<br>
+					자세히보기<br>
+					
+					</a>
+				</div>
+				
+				<div><a th:href="@{/dining?id=6}"><li><img th:src="@{/images/dinings/img_dining6.jpg}"></img></li>
+					<b>ROOM SERVICE BREAKFAST (룸 서비스 조식)</b><br>
+					객실에서 여유롭게 즐기는 나만의 조식<br>
+					예약 및 문의: TEL 032 743 9315<br>
+					자세히보기<br>
+					
+					</a>
+				</div>					
+				
+				<div><a th:href="@{/dining?id=7}"><li><img th:src="@{/images/dinings/img_dining7.jpg}"></img></li>
+					<b>NEST DELI (네스트 델리)</b><br>
+					매일 아침 구워낸 신선한 빵 내음이 가득한 공간<br>
+					예약 및 문의: TEL 032 743 9125<br>
+					
+					</a>
+				</div>			
+		
+			 </ul>
+
+			
+		</div>
+	</div>
+</body>
+</html>

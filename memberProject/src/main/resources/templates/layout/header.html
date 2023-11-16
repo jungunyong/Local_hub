@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+	<!-- xmlns:sec="http://www.thymeleaf.org/extras/spring-security" -->
+	
+<div th:fragment="header">
+
+	<!-- 인증 정보 확인  -->
+	인증 정보 : [[${#authentication}]]
+	
+
+	<div class="header_sect_pnl">
+		
+			<!-- 10.17 : 
+			
+			- Spring Security/Thymeleaf
+			: https://github.com/thymeleaf/thymeleaf-extras-springsecurity
+			
+			- Spring Security : Auth Method(인증/인가 관련 메서드)
+			: https://cafe.naver.com/ezjava3/756
+			
+			-->
+	
+		<ul id="main_menu">
+		
+			<li><a class="logo" th:href="@{/}"><img th:src="@{/images/tit_nest.gif}"></a></li>
+			
+			<!-- 로그인 인증이 안되었을 때  -->
+			<li sec:authorize="isAnonymous()"><a th:href="@{/login}"><b>로그인</b></a></li>
+			
+			<li sec:authorize="isAnonymous()"><a th:href="@{/member/join.do}"><b>회원 가입</b></a></li>	
+						
+			<!-- 로그인 인증되었을 때   -->
+			<li sec:authorize="isAuthenticated()"><a th:href="@{/welcome}"><b>MyPage</b></a></li>
+			
+			<li sec:authorize="isAuthenticated()"><a th:href="@{/logout}"><b>로그아웃</b></a></li>
+			
+			<li sec:authorize="isAuthenticated()"><a th:href="@{/member/view.do}"><b>회원 정보 조회</b></a></li>
+			
+			<li sec:authorize="isAuthenticated()"><a th:href="@{/member/update.do}"><b>회원 정보 수정</b></a></li>
+			
+			<!-- 10.18 -->
+			<!-- <li sec:authorize="isAuthenticated()"><a th:href="@{/board/write.do}">게시글 쓰기</a></li> -->
+			
+			<!-- 10.23 -->
+			<li sec:authorize="isAuthenticated()"><a th:href="@{/board/list.do}"><b>게시글 목록</b></a></li>
+			
+			<!-- 등급(롤:role)이 관리자일 경우 -->
+			<li sec:authorize="hasRole('ROLE_ADMIN')"><a th:href="@{/admin/viewAllWithRoles.do}"><b>회원 관리</b></a></li>
+			
+		</ul>
+		
+		<ul id="sub_menu">
+			
+			<li sec:authorize="isAnonymous()"><a th:href="@{/rooms}"><b>rooms</b></a></li>
+			
+			<li sec:authorize="isAnonymous()"><a th:href="@{/dinings}"><b>dinings</b></a></li>
+			
+			<li sec:authorize="isAnonymous()"><a th:href="@{/specials}"><b>specials</b></a></li>
+			
+			<li sec:authorize="isAnonymous()"><a th:href="@{/login}" onclick="alert('로그인을 먼저 해주세요')"><b>reserve</b></a></li>
+			
+			<li sec:authorize="isAuthenticated()"><a th:href="@{/rooms}"><b>rooms</b></a></li>
+			
+			<li sec:authorize="isAuthenticated()"><a th:href="@{/dinings}"><b>dinings</b></a></li>
+			
+			<li sec:authorize="isAuthenticated()"><a th:href="@{/specials}"><b>specials</b></a></li>
+			
+			<li sec:authorize="isAuthenticated()"><a th:href="@{/rooms}"onclick="alert('방을 먼저 선택해주세요')"><b>reserve</b></a></li>
+			
+			
+		</ul>
+			
+		
+	</div>
+
+</div>

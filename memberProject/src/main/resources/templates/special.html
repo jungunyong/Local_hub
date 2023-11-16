@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  layout:decorate="~{layout}"
+ 	  lang="ko-kr">
+<head>
+<meta charset="UTF-8">
+<title>[[${special.specialsName}]]</title>
+
+<link rel="stylesheet"
+	th:href="@{/bootstrap/5.3.1/css/bootstrap.min.css}" />
+<script th:src="@{/bootstrap/5.3.1/js/bootstrap.min.js}" charset="UTF-8"></script>
+
+<!-- bootstrap icons :  -->
+<link rel="stylesheet" th:href="@{/bootstrap-icons/1.11.1/font/bootstrap-icons.min.css}">
+
+</head>
+<body>
+
+<div layout:fragment="content" class="main_sect_pnl">
+	<div id="myPage" class="content_sect_pnl" >	
+		<div id="special_top">	
+			<h2>special</h2>
+		</div>
+			
+		<div id="special_tit">
+			<br><img th:src="@{'/images/specials/special/tit_promotion.gif'}"><br>
+			당신만의 은신처, 네스트호텔에서 경험할 수 있는 다양한 프로모션 상품을 만나보세요.<br><br>
+		</div>
+		
+		<div>
+			<br><b><div style="text-indent:140px;" th:text="${special.specialsInformation}"></div></b>
+		</div>
+		
+		<div id="special_containal">	
+			<img th:src="@{'/images/specials/special/'+${special.specialsPic}}">
+		</div>
+
+	</div>
+	
+	<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+</div>
+
+
+
+
+</body>
+</html>

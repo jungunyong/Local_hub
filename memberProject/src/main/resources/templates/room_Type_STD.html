@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  layout:decorate="~{layout}"
+ 	  lang="ko-kr">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+
+<link rel="stylesheet"
+	th:href="@{/bootstrap/5.3.1/css/bootstrap.min.css}" />
+<script th:src="@{/bootstrap/5.3.1/js/bootstrap.min.js}" charset="UTF-8"></script>
+
+<!-- bootstrap icons :  -->
+<link rel="stylesheet" th:href="@{/bootstrap-icons/1.11.1/font/bootstrap-icons.min.css}">
+
+</head>
+<body>
+
+<div>
+	<h2>STANDARD</h2>
+	<div layout:fragment="content" class="main_sect_pnl">
+
+		<!-- carousel slide -->
+		<div id="slideArea_1">
+			<div id="demo" class="carousel slide" data-bs-ride="carousel">
+				<swiper-container class="mySwiper" pagination="true"
+					pagination-clickable="true" navigation="true" space-between="30"
+					centered-slides="true" autoplay-delay="2500"
+					autoplay-disable-on-interaction="false"> <swiper-slide>
+				<img th:src="@{/images/visual_w01.jpg}"></swiper-slide> <swiper-slide>
+				<img th:src="@{/images/visual_w02.jpg}"></swiper-slide> <swiper-slide>
+				<img th:src="@{/images/visual_w03.jpg}"></swiper-slide> <swiper-slide>
+				<img th:src="@{/images/visual_w05.jpg}"></swiper-slide> </swiper-container>
+			</div>
+		</div>
+		<!-- boxArea1 -->
+	<div> </div>
+	
+	<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+
+
+</div>
+
+</body>
+</html>
+
